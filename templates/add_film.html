@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Add New Film</h1>
+
+<form method="post">
+    <!-- <label for="filmID">FilmID</label>
+    <input type ="number" name = "filmID" disabled> -->
+    <label for="">Title</label>
+    <input type ="text" name = "title" placeholder="Enter Film Title">
+    <label for="">Year Released</label>
+    <input type="integer" name = "year" placeholder="Enter Year Released">
+    <label for="">Rating</label>
+    <input type="text"name = "rating" placeholder="Enter Film Rating">
+    <label for="">Duration</label>
+    <input type="integer"name = "duration" placeholder="Enter Film Duration">
+    <label for="">Genre</label>
+    <input type="text"name = "genre" placeholder="Enter Film Genre">
+    <br>
+    <br>
+    <button type="submit">Insert</button>
+</form>
+
+{% endblock %}

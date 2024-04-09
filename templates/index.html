@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> FilmFlix </h1>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Film ID</th>
+            <th>Year Released</th>
+            <th>Rating</th>
+            <th>Duration</th>
+            <th>Genre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for film in films %}
+        <tr>
+            <td>{{ film['title'] }}</td>
+            <td>{{ film['filmID'] }}</td>
+            <td>{{ film['yearReleased'] }}</td>
+            <td>{{ film['Rating'] }}</td>
+            <td>{{ film['duration'] }}</td>
+            <td>{{ film['genre'] }}</td>
+            <td>
+                <button><a href="{{ url_for('update', film_id=film['filmID']) }}">Update Film</a></button>
+                <form action="{{ url_for('delete', film_id=film['filmID']) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this film?');">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+
+
+<!-- version 2, working
+<h1> FilmFlix </h1>
+<hr>
+{% for film in films %}
+<h2>{{film['title']}}</h2>
+<p>{{film['filmID']}}</p>
+<p>{{film['yearReleased']}}</p>
+<p>{{film['Rating']}}</p>
+<p>{{film['duration']}}</p>
+<p>{{film['genre']}}</p>
+
+<button>
+    <a href="{{url_for('update', film_id=film['filmID'])}}">Update Film</a>
+
+</button>
+
+<form action="{{ url_for('delete', film_id=film['filmID']) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this film?');">
+    <input type="submit" value="Delete">
+</form>
+<hr> 
+{% endfor %}
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
