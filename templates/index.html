@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1> FilmFlix </h1>
+<a href="{{url_for('add')}}">Add Film</a>   <!-- recall the finction def add -->
 <hr>
 <table>
     <thead>
@@ -33,6 +34,14 @@
         {% endfor %}
     </tbody>
 </table>
+
+
+<!-- <h1>Search Film</h1>
+<ul>
+    <li>search by yearReleased</li>
+    <li>Search by Rating</li>
+    <li>Searh by Genre</li>
+</ul> -->
 {% endblock %}
 
 

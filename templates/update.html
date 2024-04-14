@@ -6,15 +6,20 @@
 <!-- it gets the filmID and prepopulate the form -->
 <form method="post">
     <label for="filmID">FilmID</label>
-    <input type ="number" name = "filmID" value="{{film['filmID']}}" disabled>
+    <input type ="number" name = "filmID" value="{{film['filmID']}}" readonly>
+    
     <label for="">Title</label>
     <input type ="text" name = "title" value="{{film['title']}}">
+
     <label for="">Year Released</label>
     <input type="integer" name = "year" value="{{film['yearReleased']}}">
+
     <label for="">Rating</label>
     <input type="text"name = "rating" value="{{film['rating']}}">
+
     <label for="">Duration</label>
     <input type="integer"name = "duration" value="{{film['duration']}}">
+
     <label for="">Genre</label>
     <input type="text"name = "genre" value="{{film['genre']}}">
     <br>

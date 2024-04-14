@@ -3,7 +3,7 @@ import sqlite3 as sql
  
 # this file previous called dbMenu renamed to app.py
 # Importing necessary modules
-# import reportFilm
+# from reportFilm import *
  
  
 app = Flask(__name__)
@@ -17,7 +17,9 @@ def db_access():
         
     except sql.OperationalError as e: 
         print(f"Connect failed: {e}")
- 
+
+    
+
 # retrieve film information from a database.
 def get_film(film_id):
     conn = db_access()
@@ -27,7 +29,7 @@ def get_film(film_id):
         abort(404)
     return film 
 
- 
+
 @app.route('/')
 def index():
     conn = db_access() #internal connection to the db page
@@ -91,6 +93,7 @@ def delete(film_id):
     else:
         # Render a confirmation page for GET request
         return render_template('confirm_delete.html', film_id=film_id)
+
 
 
 
